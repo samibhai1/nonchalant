@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="$NONCHALANT price chart and live market data.">
+  <meta property="og:title" content="Chart — NONCHALANT COIN">
+  <title>CHART — NONCHALANT COIN</title>
+  <!--
+    ============================================================
+    FAVICON SETUP — README IN index.html HEAD
+    ============================================================
+  -->
+  <!-- FAVICON -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=DM+Serif+Display:ital@1&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="chart.css">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a href="index.html" class="logo-link">
+        <span class="logo-name">NONCHALANT</span><span class="logo-coin">COIN</span>
+      </a>
+      <div class="nav-links">
+        <a href="index.html#about" class="nav-link">ABOUT</a>
+        <a href="index.html#community" class="nav-link">COMMUNITY</a>
+        <a href="index.html#vault" class="nav-link">VAULT</a>
+        <a href="chart.html" class="nav-link nav-link-active">CHART</a>
+        <a href="gallery.html" class="nav-link">GALLERY</a>
+        <a href="#" class="nav-link meme-trigger">MEME GEN</a>
+        <a href="#" class="nav-cta">BUY $NONCHALANT<span class="blink">_</span></a>
+      </div>
+      <button class="hamburger" aria-label="Open menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- MOBILE NAV OVERLAY -->
+  <div class="nav-overlay">
+    <button class="nav-overlay-close">CLOSE</button>
+    <a href="index.html#about" class="nav-overlay-link">ABOUT</a>
+    <a href="index.html#community" class="nav-overlay-link">COMMUNITY</a>
+    <a href="index.html#vault" class="nav-overlay-link">VAULT</a>
+    <a href="chart.html" class="nav-overlay-link nav-overlay-active">CHART</a>
+    <a href="gallery.html" class="nav-overlay-link">GALLERY</a>
+    <a href="#" class="nav-overlay-link meme-trigger">MEME GEN</a>
+    <div class="overlay-cta">
+      <a href="#" class="nav-cta">BUY $NONCHALANT<span class="blink">_</span></a>
+    </div>
+  </div>
+
+  <!-- MAIN -->
+  <main>
+
+    <!-- PAGE HEADER -->
+    <section class="chart-header">
+      <div class="container">
+        <p class="eyebrow sr" data-delay="0">004 — CHART</p>
+        <div class="chart-title-row sr" data-delay="80">
+          <h1 class="chart-title">PRICE CHART.</h1>
+          <!-- CA meta block — shown by JS only when TOKEN_CA is set -->
+          <div class="ca-meta" id="ca-meta" hidden>
+            <span class="ca-meta-label">CONTRACT</span>
+            <span class="ca-meta-address">
+              <span id="ca-truncated"></span>
+              <button id="copy-ca-btn">COPY</button>
+            </span>
+            <span class="ca-meta-chain">CHAIN: SOLANA</span>
+          </div>
+        </div>
+        <div class="chart-divider"></div>
+      </div>
+    </section>
+
+    <!-- CHART WRAPPER — shown when TOKEN_CA is set -->
+    <div class="chart-wrapper" id="chart-wrapper" hidden>
+      <div class="container">
+        <!-- STATS BAR -->
+        <div class="stats-bar sr" data-delay="160">
+          <div class="stat-item">
+            <span class="stat-label">PRICE</span>
+            <span class="stat-value" data-live="price">$0.00</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-label">24H CHG</span>
+            <span class="stat-value" data-live="change">0.00%</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-label">VOLUME</span>
+            <span class="stat-value" data-live="vol">$0.00</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-label">MKT CAP</span>
+            <span class="stat-value" data-live="cap">$0.00</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- CHART CONTAINER — full width, outside container -->
+      <div class="chart-container sr" data-delay="200" id="chart-container">
+        <div class="chart-loading" id="chart-loading">
+          <span class="chart-loading-text">LOADING CHART DATA</span>
+          <span class="chart-loading-line"></span>
+        </div>
+        <div class="chart-error" id="chart-error" hidden>
+          <p class="chart-error-title">CHART UNAVAILABLE</p>
+          <p class="chart-error-sub">Unable to load pair data from DexScreener.</p>
+          <button id="chart-retry-btn">RETRY</button>
+        </div>
+        <iframe id="chart-iframe" hidden></iframe>
+      </div>
+
+      <div class="container">
+        <div class="chart-caption">
+          <span>DATA PROVIDED BY DEXSCREENER</span>
+          <span>AUTO-REFRESHES EVERY 60S</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- NO CA PLACEHOLDER — shown when TOKEN_CA is empty -->
+    <div class="chart-placeholder" id="chart-placeholder" hidden>
+      <div class="container">
+        <div class="placeholder-inner sr" data-delay="160">
+          <span class="placeholder-line"></span>
+          <p class="placeholder-title">CHART WILL BE UPDATED SOON.</p>
+          <p class="placeholder-sub">Token contract not yet configured.</p>
+          <span class="placeholder-line"></span>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-row">
+        <span class="footer-logo">
+          <span class="logo-name">NONCHALANT</span><span class="logo-coin">COIN</span>
+        </span>
+        <nav class="footer-nav">
+          <a href="index.html#about">ABOUT</a>
+          <a href="index.html#community">COMMUNITY</a>
+          <a href="index.html#vault">VAULT</a>
+          <a href="chart.html">CHART</a>
+          <a href="gallery.html">GALLERY</a>
+          <a href="#" class="meme-trigger">MEME GEN</a>
+          <a href="https://x.com/RealNonchalantX" target="_blank" rel="noopener noreferrer">X</a>
+        </nav>
+        <span class="footer-disclaimer">NOT FINANCIAL ADVICE.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="chart.js"></script>
+
+  <!-- MEME POPUP -->
+  <div id="meme-popup" class="meme-popup" aria-hidden="true">
+    <div class="meme-popup-backdrop"></div>
+    <div class="meme-popup-box">
+      <div class="meme-popup-eyebrow">COMING SOON</div>
+      <h2 class="meme-popup-title">MEME<br>GENERATOR.</h2>
+      <p class="meme-popup-body">
+        Create your own nonchalant meme.<br>
+        Launching when the time is right.
+      </p>
+      <div class="meme-popup-line"></div>
+      <p class="meme-popup-hint">No date. No hype.</p>
+      <button class="meme-popup-close">CLOSE</button>
+    </div>
+  </div>
+</body>
+</html>

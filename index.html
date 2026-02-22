@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="The meme coin for the truly nonchalant.">
+  <meta property="og:title" content="Nonchalant Coin — $NONCHALANT">
+  <meta property="og:description" content="The meme coin for those who never needed to explain themselves.">
+  <title>NONCHALANT COIN — $NONCHALANT</title>
+  <!--
+    ============================================================
+    FAVICON SETUP — READ THIS
+    ============================================================
+    1. Go to: https://realfavicongenerator.net
+    2. Upload your logo/image (min 512x512px recommended, square)
+    3. Download the generated favicon package
+    4. Place all files in the ROOT of your website folder
+       (same folder as index.html)
+    5. The generator will give you exact <link> tags to paste here
+       — replace the placeholder links below with those.
+    ============================================================
+  -->
+  <!-- FAVICON -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=DM+Serif+Display:ital@1&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a href="#" class="logo-link">
+        <span class="logo-name">NONCHALANT</span><span class="logo-coin">COIN</span>
+      </a>
+      <div class="nav-links">
+        <a href="#about" class="nav-link">ABOUT</a>
+        <a href="#community" class="nav-link">COMMUNITY</a>
+        <a href="#vault" class="nav-link">VAULT</a>
+        <a href="chart.html" class="nav-link">CHART</a>
+        <a href="gallery.html" class="nav-link">GALLERY</a>
+        <a href="#" class="nav-link meme-trigger">MEME GEN</a>
+        <a href="#" class="nav-cta">BUY $NONCHALANT<span class="blink">_</span></a>
+      </div>
+      <button class="hamburger" aria-label="Open menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="nav-overlay">
+    <button class="nav-overlay-close">CLOSE</button>
+    <a href="#about" class="nav-overlay-link">ABOUT</a>
+    <a href="#community" class="nav-overlay-link">COMMUNITY</a>
+    <a href="#vault" class="nav-overlay-link">VAULT</a>
+    <a href="chart.html" class="nav-overlay-link">CHART</a>
+    <a href="gallery.html" class="nav-overlay-link">GALLERY</a>
+    <a href="#" class="nav-overlay-link meme-trigger">MEME GEN</a>
+    <div class="overlay-cta">
+      <a href="#" class="nav-cta">BUY $NONCHALANT<span class="blink">_</span></a>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="particles" id="heroParticles"></div>
+    <div class="hero-grid">
+      <div class="hero-left">
+        <p class="hero-label sr" data-delay="0">$NONCHALANT — SOLANA — 2026</p>
+        <h1 class="hero-name sr" data-delay="80">NONCHALANT</h1>
+        <p class="hero-sub-name sr" data-delay="160">COIN</p>
+        <hr class="hero-rule sr" data-delay="240">
+        <p class="hero-desc sr" data-delay="240">The meme coin for those who never needed to explain themselves.</p>
+        <div class="hero-buttons sr" data-delay="320">
+          <a href="#" class="btn-primary">GET $NONCHALANT</a>
+          <a href="#about" class="btn-secondary">READ THE BRIEF</a>
+        </div>
+      </div>
+      <div class="hero-right">
+        <!-- THE DIAL SVG -->
+        <svg class="dial-svg sr" data-delay="160" width="480" height="480" viewBox="0 0 480 480" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs>
+            <path id="top-arc" d="M 60,240 A 180,180 0 0,1 420,240" fill="none"/>
+            <path id="bottom-arc" d="M 60,240 A 180,180 0 0,0 420,240" fill="none"/>
+          </defs>
+
+          <!-- Outer ring -->
+          <circle cx="240" cy="240" r="220" fill="none" stroke="rgba(224,221,216,0.16)" stroke-width="1"/>
+          <!-- Inner ring -->
+          <circle cx="240" cy="240" r="200" fill="none" stroke="rgba(224,221,216,0.08)" stroke-width="0.5"/>
+
+          <!-- Tick marks group (rotates slowly) -->
+          <g id="tick-ring">
+            <!-- i=0 angle=0deg -->
+            <line x1="240.00" y1="20.00" x2="240.00" y2="32.00" stroke="rgba(224,221,216,0.45)" stroke-width="1"/>
+            <!-- i=1 angle=6deg -->
+            <line x1="262.91" y1="20.29" x2="261.79" y2="32.26" stroke="rgba(224,221,216,0.16)" stroke-width="0.5"/>
+            <!-- i=2 angle=12deg -->
+            <line x1="285.31" y1="21.15" x2="283.08" y2="33.06" stroke="rgba(224,221,216,0.16)" stroke-width="0.5"/>
+            <!-- i=3 angle=18deg -->
+            <line x1="306.68" y1="22.58" x2="303.39" y2="34.37" stroke="rgba(224,221,216,0.16)" stroke-width="0.5"/>
+            <!-- i=4 angle=24deg -->
+            <line x1="326.51" y1="24.55" x2="322.24" y2="36.17" stroke="rgba(224,221,216,0.16)" stroke-width="0.5"/>
+            <!-- i=5 angle=30deg (major) -->
+            <line x1="344.33" y1="27.00" x2="339.20" y2="39.00" stroke="rgba(224,221,216,0.45)" stroke-width="1"/>
+            <!-- i=6 angle=36deg -->
+            <line x1="360.21" y1="29.95" x2="354.38" y2="41.75" stroke="rgba(224,221,216,0.16)" stroke-width="0.5"/>
+            <!-- i=7 angle=42deg -->
+            <line x1="374.11" y1="33.38" x2="367.72" y2="44.90" stroke="rgba(224,221,216,0.16)" stroke-width="0.5"/>
+            <!-- i=8 angle=48deg -->
+            <line x1="385.87" y1="37.22" x2="378.99" y2="48.34" stroke="rgba(224,221,216,0.16)" stroke-width="0.5"/>
+            <!-- i=9 angle=54deg -->
+            <line x1="395.40" y1="41.49" x2="388.09" y2="52.16" stroke="rgba(224,221,216,0.16)" stroke-width="0.5"/>
+            <!-- i=10 angle=60deg (major) -->
+            <line x1="402.58" y1="46.15" x2="394.94" y2="56.15" stroke="rgba(224,221,216,0.45)" stroke-width="1"/>
+            <!-- i=11 angle=66deg -->
+            <line x1="407.42" y1="51.13" x2="399.53" y2="60.36" stroke="rgba(224,221,216,0.16)" stroke-width="0.5"/>
+            <!-- i=12 angle=72deg -->
+            <line x1="409.96" y1="56.35" x2="401.93" y2="64.74" stroke="rgba(224,221,216,0.16)" stroke-width="0.5"/>
+            <!-- i=13 angle=78deg -->
+            <line x1="410.33" y1="61.73" x2="402.27" y2="69.21" stroke="rgba(224,221,216,0.16)" stroke-width="0.5"/>
+            <!-- i=14 angle=84deg -->
+            <line x1="408.64" y1="67.16" x2="400.66" y2="73.65" stroke="rgba(224,221,216,0.16)" stroke-width="0.5"/>
+            <!-- i=15 angle=90deg (major) -->
+            <line x1="460.00" y1="240.00" x2="448.00" y2="240.00" stroke="rgba(224,221,216,0.45)" stroke-width="1"/>
+            <!-- i=16 angle=96deg -->
+            <line x1="459.65" y1="263.23" x2="447.71" y2="261.05" stroke="rgba(224,221,216,0.16)" stroke-width="0.5"/>
+            <!-- i=17 angle=102deg -->
+            <line x1="458.61" y1="286.24" x2="446.83" y2="282.97" stroke="rgba(224,221,216,0.16)" stroke-width="0.5"/>
+            <!-- i=18 angle=108deg -->
+            <line x1="456.91" y1="308.82" x2="445.35" y2="304.49" stroke="rgba(224,221,216,0.16)" stroke-width="0.5"/>
+            <!-- i=19 angle=114deg -->
+            <line x1="454.59" y1="330.76" x2="443.32" y2="325.42" stroke="rgba(224,221,216,0.16)" stroke-width="0.5"/>
+            <!-- i=20 angle=120deg (major) -->
+            <line x1="344.33" y1="453.00" x2="339.20" y2="441.00" stroke="rgba(224,221,216,0.45)" stroke-width="1"/>
+            <!-- i=21 angle=126deg -->
+            <line x1="323.06" y1="461.92" x2="318.48" y2="450.25" stroke="rgba(224,221,216,0.16)" stroke-width="0.5"/>
+            <!-- i=22 angle=132deg -->
+            <line x1="301.03" y1="469.14" x2="297.05" y2="457.82" stroke="rgba(224,221,216,0.16)" stroke-width="0.5"/>
+            <!-- i=23 angle=138deg -->
+            <line x1="278.51" y1="474.57" x2="275.19" y2="463.64" stroke="rgba(224,221,216,0.16)" stroke-width="0.5"/>
+            <!-- i=24 angle=144deg -->
+            <line x1="255.74" y1="478.16" x2="253.12" y2="467.61" stroke="rgba(224,221,216,0.16)" stroke-width="0.5"/>
+            <!-- i=25 angle=150deg (major) -->
+            <line x1="135.67" y1="453.00" x2="140.80" y2="441.00" stroke="rgba(224,221,216,0.45)" stroke-width="1"/>
+            <!-- i=26 angle=156deg -->
+            <line x1="214.95" y1="478.62" x2="213.03" y2="468.14" stroke="rgba(224,221,216,0.16)" stroke-width="0.5"/>
+            <!-- i=27 angle=162deg -->
+            <line x1="192.52" y1="477.22" x2="191.32" y2="466.81" stroke="rgba(224,221,216,0.16)" stroke-width="0.5"/>
+            <!-- i=28 angle=168deg -->
+            <line x1="170.63" y1="473.96" x2="170.22" y2="463.62" stroke="rgba(224,221,216,0.16)" stroke-width="0.5"/>
+            <!-- i=29 angle=174deg -->
+            <line x1="149.57" y1="468.90" x2="150.00" y2="458.67" stroke="rgba(224,221,216,0.16)" stroke-width="0.5"/>
+            <!-- i=30 angle=180deg (major) -->
+            <line x1="240.00" y1="460.00" x2="240.00" y2="448.00" stroke="rgba(224,221,216,0.45)" stroke-width="1"/>
+            <!-- i=31 angle=186deg -->
+            <line x1="217.09" y1="459.71" x2="218.21" y2="447.74" stroke="rgba(224,221,216,0.16)" stroke-width="0.5"/>
+            <!-- i=32 angle=192deg -->
+            <line x1="194.69" y1="458.85" x2="196.92" y2="446.94" stroke="rgba(224,221,216,0.16)" stroke-width="0.5"/>
+            <!-- i=33 angle=198deg -->
+            <line x1="173.32" y1="457.42" x2="176.61" y2="445.63" stroke="rgba(224,221,216,0.16)" stroke-width="0.5"/>
+            <!-- i=34 angle=204deg -->
+            <line x1="153.49" y1="455.45" x2="157.76" y2="443.83" stroke="rgba(224,221,216,0.16)" stroke-width="0.5"/>
+            <!-- i=35 angle=210deg (major) -->
+            <line x1="95.67" y1="453.00" x2="100.80" y2="441.00" stroke="rgba(224,221,216,0.45)" stroke-width="1"/>
+            <!-- i=36 angle=216deg -->
+            <line x1="119.79" y1="450.05" x2="125.62" y2="438.25" stroke="rgba(224,221,216,0.16)" stroke-width="0.5"/>
+            <!-- i=37 angle=222deg -->
+            <line x1="105.89" y1="446.62" x2="112.28" y2="435.10" stroke="rgba(224,221,216,0.16)" stroke-width="0.5"/>
+            <!-- i=38 angle=228deg -->
+            <line x1="94.13" y1="442.78" x2="101.01" y2="431.66" stroke="rgba(224,221,216,0.16)" stroke-width="0.5"/>
+            <!-- i=39 angle=234deg -->
+            <line x1="84.60" y1="438.51" x2="91.91" y2="427.84" stroke="rgba(224,221,216,0.16)" stroke-width="0.5"/>
+            <!-- i=40 angle=240deg (major) -->
+            <line x1="20.00" y1="240.00" x2="32.00" y2="240.00" stroke="rgba(224,221,216,0.45)" stroke-width="1"/>
+            <!-- i=41 angle=246deg -->
+            <line x1="20.35" y1="216.77" x2="32.29" y2="218.95" stroke="rgba(224,221,216,0.16)" stroke-width="0.5"/>
+            <!-- i=42 angle=252deg -->
+            <line x1="21.39" y1="193.76" x2="33.17" y2="197.03" stroke="rgba(224,221,216,0.16)" stroke-width="0.5"/>
+            <!-- i=43 angle=258deg -->
+            <line x1="23.09" y1="171.18" x2="34.65" y2="175.51" stroke="rgba(224,221,216,0.16)" stroke-width="0.5"/>
+            <!-- i=44 angle=264deg -->
+            <line x1="25.41" y1="149.24" x2="36.68" y2="154.58" stroke="rgba(224,221,216,0.16)" stroke-width="0.5"/>
+            <!-- i=45 angle=270deg (major) -->
+            <line x1="20.00" y1="240.00" x2="32.00" y2="240.00" stroke="rgba(224,221,216,0.45)" stroke-width="1"/>
+            <!-- i=46 angle=276deg -->
+            <line x1="57.42" y1="108.08" x2="65.47" y2="117.75" stroke="rgba(224,221,216,0.16)" stroke-width="0.5"/>
+            <!-- i=47 angle=282deg -->
+            <line x1="68.97" y1="88.86" x2="77.86" y2="99.64" stroke="rgba(224,221,216,0.16)" stroke-width="0.5"/>
+            <!-- i=48 angle=288deg -->
+            <line x1="82.58" y1="70.84" x2="92.23" y2="82.48" stroke="rgba(224,221,216,0.16)" stroke-width="0.5"/>
+            <!-- i=49 angle=294deg -->
+            <line x1="98.04" y1="54.35" x2="108.35" y2="66.68" stroke="rgba(224,221,216,0.16)" stroke-width="0.5"/>
+            <!-- i=50 angle=300deg (major) -->
+            <line x1="135.67" y1="27.00" x2="140.80" y2="39.00" stroke="rgba(224,221,216,0.45)" stroke-width="1"/>
+            <!-- i=51 angle=306deg -->
+            <line x1="133.49" y1="38.08" x2="138.38" y2="49.75" stroke="rgba(224,221,216,0.16)" stroke-width="0.5"/>
+            <!-- i=52 angle=312deg -->
+            <line x1="152.58" y1="30.86" x2="157.72" y2="42.18" stroke="rgba(224,221,216,0.16)" stroke-width="0.5"/>
+            <!-- i=53 angle=318deg -->
+            <line x1="173.02" y1="25.43" x2="178.81" y2="36.36" stroke="rgba(224,221,216,0.16)" stroke-width="0.5"/>
+            <!-- i=54 angle=324deg -->
+            <line x1="194.41" y1="21.84" x2="200.88" y2="32.39" stroke="rgba(224,221,216,0.16)" stroke-width="0.5"/>
+            <!-- i=55 angle=330deg (major) -->
+            <line x1="344.33" y1="27.00" x2="339.20" y2="39.00" stroke="rgba(224,221,216,0.45)" stroke-width="1"/>
+            <!-- i=56 angle=336deg -->
+            <line x1="218.91" y1="20.27" x2="225.97" y2="30.34" stroke="rgba(224,221,216,0.16)" stroke-width="0.5"/>
+            <!-- i=57 angle=342deg -->
+            <line x1="230.04" y1="20.04" x2="231.45" y2="30.14" stroke="rgba(224,221,216,0.16)" stroke-width="0.5"/>
+            <!-- i=58 angle=348deg -->
+            <line x1="232.72" y1="20.06" x2="233.85" y2="30.09" stroke="rgba(224,221,216,0.16)" stroke-width="0.5"/>
+            <!-- i=59 angle=354deg -->
+            <line x1="236.35" y1="20.01" x2="237.25" y2="30.04" stroke="rgba(224,221,216,0.16)" stroke-width="0.5"/>
+          </g>
+
+          <!-- Crosshair lines -->
+          <line x1="20" y1="240" x2="460" y2="240" stroke="rgba(224,221,216,0.08)" stroke-width="0.5"/>
+          <line x1="240" y1="20" x2="240" y2="460" stroke="rgba(224,221,216,0.08)" stroke-width="0.5"/>
+
+          <!-- Cardinal data labels -->
+          <!-- 12 o'clock -->
+          <text x="240" y="168" text-anchor="middle" font-family="'IBM Plex Mono', monospace" font-size="9" fill="rgba(224,221,216,0.22)">PRICE</text>
+          <text x="240" y="181" text-anchor="middle" font-family="'IBM Plex Mono', monospace" font-size="11" font-weight="500" fill="#E2FF4A" data-live="price">$0.00</text>
+          <!-- 3 o'clock -->
+          <text x="310" y="236" text-anchor="start" font-family="'IBM Plex Mono', monospace" font-size="9" fill="rgba(224,221,216,0.22)">VOL</text>
+          <text x="310" y="249" text-anchor="start" font-family="'IBM Plex Mono', monospace" font-size="11" font-weight="500" fill="#E2FF4A" data-live="vol">$0.00</text>
+          <!-- 6 o'clock -->
+          <text x="240" y="308" text-anchor="middle" font-family="'IBM Plex Mono', monospace" font-size="9" fill="rgba(224,221,216,0.22)">CHAIN</text>
+          <text x="240" y="321" text-anchor="middle" font-family="'IBM Plex Mono', monospace" font-size="11" font-weight="500" fill="#E2FF4A">SOL</text>
+          <!-- 9 o'clock -->
+          <text x="170" y="236" text-anchor="end" font-family="'IBM Plex Mono', monospace" font-size="9" fill="rgba(224,221,216,0.22)">YEAR</text>
+          <text x="170" y="249" text-anchor="end" font-family="'IBM Plex Mono', monospace" font-size="11" font-weight="500" fill="#E2FF4A">2026</text>
+
+          <!-- Arc text NONCHALANT COIN top -->
+          <text>
+            <textPath href="#top-arc" startOffset="50%" text-anchor="middle"
+              font-family="'Barlow Condensed', sans-serif" font-weight="800" font-size="13"
+              letter-spacing="6" fill="rgba(224,221,216,0.45)">NONCHALANT COIN</textPath>
+          </text>
+
+          <!-- Arc text $NONCHALANT bottom -->
+          <text>
+            <textPath href="#bottom-arc" startOffset="50%" text-anchor="middle"
+              font-family="'IBM Plex Mono', monospace" font-weight="400" font-size="10"
+              letter-spacing="4" fill="rgba(224,221,216,0.22)">$NONCHALANT</textPath>
+          </text>
+
+          <!-- Accent arc segment (12 o'clock to 3 o'clock) -->
+          <path d="M 240,20 A 220,220 0 0,1 460,240" fill="none" stroke="#E2FF4A" stroke-width="1.5" opacity="0.6"/>
+
+          <!-- Center dot -->
+          <circle cx="240" cy="240" r="3" fill="#E2FF4A"/>
+        </svg>
+      </div>
+    </div>
+    <!-- Ticker bar -->
+    <div class="hero-ticker">
+      <div class="ticker-wrap">
+        <div class="ticker-track">
+          <span class="ticker-item">PRICE: <span class="ticker-accent" data-live="price">$0.00</span></span>
+          <span class="ticker-sep">·</span>
+          <span class="ticker-item">VOL: <span data-live="vol">$0.00</span></span>
+          <span class="ticker-sep">·</span>
+          <span class="ticker-item">CAP: <span data-live="cap">$0.00</span></span>
+          <span class="ticker-sep">·</span>
+          <span class="ticker-item">24H: <span data-live="change">0.00%</span></span>
+          <span class="ticker-sep">·</span>
+          <span class="ticker-item">CHAIN: SOL</span>
+          <span class="ticker-sep">·</span>
+          <span class="ticker-item">SUPPLY: 1,000,000,000</span>
+          <span class="ticker-sep">·</span>
+          <span class="ticker-item">STATUS: <span class="ticker-accent">LIVE</span></span>
+          <span class="ticker-sep">·</span>
+          <span class="ticker-item">TICKER: $NONCHALANT</span>
+          <span class="ticker-sep">·</span>
+          <span class="ticker-item">PRICE: <span class="ticker-accent" data-live="price">$0.00</span></span>
+          <span class="ticker-sep">·</span>
+          <span class="ticker-item">VOL: <span data-live="vol">$0.00</span></span>
+          <span class="ticker-sep">·</span>
+          <span class="ticker-item">CAP: <span data-live="cap">$0.00</span></span>
+          <span class="ticker-sep">·</span>
+          <span class="ticker-item">24H: <span data-live="change">0.00%</span></span>
+          <span class="ticker-sep">·</span>
+          <span class="ticker-item">CHAIN: SOL</span>
+          <span class="ticker-sep">·</span>
+          <span class="ticker-item">SUPPLY: 1,000,000,000</span>
+          <span class="ticker-sep">·</span>
+          <span class="ticker-item">STATUS: <span class="ticker-accent">LIVE</span></span>
+          <span class="ticker-sep">·</span>
+          <span class="ticker-item">TICKER: $NONCHALANT</span>
+          <span class="ticker-sep">·</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <span class="section-wm" aria-hidden="true">01</span>
+    <div class="particles" id="aboutParticles"></div>
+
+    <div class="bleed-quote sr" data-delay="0">
+      <blockquote>Effortless composure in a world demanding constant reaction.</blockquote>
+    </div>
+
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-left sr" data-delay="0">
+          <p class="section-eyebrow">001 — ABOUT</p>
+        </div>
+        <div class="about-right">
+          <p class="about-body sr" data-delay="80">Nonchalant embodies the art of effortless composure in a world demanding constant reaction. It is the quiet confidence that remains unshaken by chaos — the graceful indifference that signals you are unfazed by what rattles others. Moving through life's storms with your collar still perfectly aligned.</p>
+          <hr class="section-rule sr" data-delay="160">
+          <div class="ca-block sr" data-delay="200">
+            <span class="ca-label">CONTRACT ADDRESS</span>
+            <span id="contractAddress">0x0000000000000000000000000000000000000000</span>
+            <button id="copyButton">copy address</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMMUNITY -->
+  <section class="community" id="community">
+    <span class="section-wm" aria-hidden="true">02</span>
+    <div class="particles" id="communityParticles"></div>
+    <div class="container">
+      <div class="community-grid">
+        <div class="community-left">
+          <p class="section-eyebrow sr" data-delay="0">002 — COMMUNITY</p>
+          <div class="community-big sr" data-delay="80">
+            <div class="community-big-line" style="color: var(--text);">JOIN</div>
+            <div class="community-big-line" style="color: var(--text);">THE</div>
+            <div class="community-big-line" style="color: var(--accent);">LOUNGE.</div>
+          </div>
+        </div>
+        <div class="community-right">
+          <div class="community-block sr" data-delay="80">
+            <p class="block-label">THE SIGNAL</p>
+            <h3 class="block-heading">Measured updates.</h3>
+            <p class="block-body">Main X account of $nonchalant</p>
+            <a href="https://x.com/RealNonchalantX" target="_blank" rel="noopener noreferrer" class="block-link">→ FOLLOW ON X</a>
+          </div>
+          <hr class="section-rule sr" data-delay="120">
+          <div class="community-block sr" data-delay="160">
+            <p class="block-label">THE LOUNGE</p>
+            <h3 class="block-heading">A composed community.</h3>
+            <p class="block-body">Telegram community chat of $nonchalant</p>
+            <a href="#" class="block-link">→ ENTER TELEGRAM</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VAULT -->
+  <section class="vault" id="vault">
+    <span class="section-wm" aria-hidden="true">03</span>
+    <div class="particles" id="vaultParticles"></div>
+    <div class="container">
+      <div class="vault-header">
+        <p class="section-eyebrow sr" data-delay="0">003 — VAULT</p>
+        <div class="vault-title sr" data-delay="80">
+          <div class="vault-title-main">THE VAULT</div>
+          <div class="vault-title-sub">ACCESS: RESTRICTED</div>
+        </div>
+        <hr class="section-rule sr" data-delay="160">
+      </div>
+
+      <div class="vault-panel sr" data-delay="200">
+        <!-- LEFT PANEL -->
+        <div class="vault-left">
+          <span class="vault-bg-wm" aria-hidden="true">VAULT</span>
+          <div class="vault-left-content">
+            <p class="vault-collection-label">COLLECTION 001</p>
+            <h2 class="vault-product-name">THE STANDARD ISSUE</h2>
+            <p class="vault-desc">Constructed for those who move through chaos without adjusting their collar. Details withheld pending clearance.</p>
+
+            <div class="specs-block">
+              <p class="specs-label">SPECIFICATIONS</p>
+              <table class="specs-table">
+                <tr>
+                  <td>MATERIAL</td>
+                  <td><span class="redacted">CLASSIFIED</span></td>
+                </tr>
+                <tr>
+                  <td>WEIGHT</td>
+                  <td><span class="redacted">CLASSIFIED</span></td>
+                </tr>
+                <tr>
+                  <td>COLORWAY</td>
+                  <td><span class="redacted">CLASSIFIED</span></td>
+                </tr>
+                <tr>
+                  <td>RELEASE</td>
+                  <td><span class="redacted">CLASSIFIED</span></td>
+                </tr>
+              </table>
+            </div>
+
+            <div class="case-block">
+              <p class="case-label">CASE #0001</p>
+              <p id="vault-timestamp"></p>
+            </div>
+
+            <button disabled class="vault-cta">REQUEST ACCESS</button>
+            <p class="vault-hint">no date. no hype.</p>
+          </div>
+        </div>
+        <!-- RIGHT PANEL -->
+        <div class="vault-right">
+          <div class="vault-right-inner">
+            <p class="vault-visual-pending">VISUAL<br>PENDING<br>CLEARANCE</p>
+          </div>
+          <div class="vault-right-strip">
+            <span>STATUS: PENDING CLEARANCE</span>
+            <span>RESTRICTED</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Collection grid -->
+      <div class="collection-section sr" data-delay="240">
+        <span class="collection-label">FULL COLLECTION — 3 ITEMS</span>
+        <div class="collection-grid">
+          <div class="collection-item">LOCKED</div>
+          <div class="collection-item">LOCKED</div>
+          <div class="collection-item">LOCKED</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <!-- Colophon mark -->
+      <svg class="colophon-mark" width="48" height="48" viewBox="0 0 48 48" aria-hidden="true">
+        <circle cx="24" cy="24" r="22" fill="none" stroke="rgba(224,221,216,0.12)" stroke-width="1"/>
+        <circle cx="24" cy="24" r="18" fill="none" stroke="rgba(224,221,216,0.06)" stroke-width="0.5"/>
+        <circle cx="24" cy="24" r="2.5" fill="#E2FF4A"/>
+        <line x1="24" y1="2" x2="24" y2="46" stroke="rgba(224,221,216,0.06)" stroke-width="0.5"/>
+        <line x1="2" y1="24" x2="46" y2="24" stroke="rgba(224,221,216,0.06)" stroke-width="0.5"/>
+      </svg>
+
+      <div class="footer-grid">
+        <div class="footer-col-left sr" data-delay="0">
+          <p class="footer-logo"><span class="logo-name">NONCHALANT</span><span class="logo-coin">COIN</span></p>
+          <p class="footer-tagline">The meme coin for the truly nonchalant.</p>
+        </div>
+        <div class="footer-col-center sr" data-delay="80">
+          <a href="#about" class="footer-nav-link">ABOUT</a>
+          <a href="#community" class="footer-nav-link">COMMUNITY</a>
+          <a href="#vault" class="footer-nav-link">VAULT</a>
+          <a href="chart.html" class="footer-nav-link">CHART</a>
+          <a href="gallery.html" class="footer-nav-link">GALLERY</a>
+          <a href="#" class="footer-nav-link meme-trigger">MEME GEN</a>
+          <a href="https://x.com/RealNonchalantX" target="_blank" rel="noopener noreferrer" class="footer-nav-link">X</a>
+        </div>
+        <div class="footer-col-right sr" data-delay="160">
+          <span class="ca-label">CA</span>
+          <span class="footer-address">0x0000000000000000000000000000000000000000</span>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>2026 NONCHALANT COIN.</span>
+        <span>NOT FINANCIAL ADVICE.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+
+  <!-- MEME POPUP -->
+  <div id="meme-popup" class="meme-popup" aria-hidden="true">
+    <div class="meme-popup-backdrop"></div>
+    <div class="meme-popup-box">
+      <div class="meme-popup-eyebrow">COMING SOON</div>
+      <h2 class="meme-popup-title">MEME<br>GENERATOR.</h2>
+      <p class="meme-popup-body">
+        Create your own nonchalant meme.<br>
+        Launching when the time is right.
+      </p>
+      <div class="meme-popup-line"></div>
+      <p class="meme-popup-hint">No date. No hype.</p>
+      <button class="meme-popup-close">CLOSE</button>
+    </div>
+  </div>
+</body>
+</html>
